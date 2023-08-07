@@ -1,0 +1,47 @@
+    body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.split {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.split_left {
+    background-color: #f1f1f1;
+    overflow-y:scroll;
+    max-height: 10000px;
+    width: 50%;
+}
+
+.split_right {
+    background-color: #ddd;
+    overflow-y:scroll;
+    max-height: 10000px;
+    width: 50%;
+}
+
+img {
+    display : block;
+    margin: 0 auto;
+    margin-top: 20px;
+
+}
+
+/*.sticky_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.centered img {
+    max-width: 100%;
+    max-height: 100%;
+}
