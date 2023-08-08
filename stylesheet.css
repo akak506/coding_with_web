@@ -5,14 +5,12 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-
 .split {
     width: 50%;
     height: 100%;
     overflow: hidden;
     position: relative;
 }
-
 .split_left {
     background-color: #f1f1f1;
     overflow-y:scroll;
