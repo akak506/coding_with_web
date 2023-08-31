@@ -1,0 +1,243 @@
+/* BODY AND SECTIONS */
+/* ----------------------------------------------------- */
+/* All body and section styling available here (except for the fonts, which are declared in the defaults+fonts.css). Some properties have already been declared */
+
+body {
+  padding: 40px 10%;
+  background-color: rgb(235, 235, 235);
+}
+
+section {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+section>h2 {
+  text-align: center;
+  line-height: 1;
+  border-bottom: 1px solid black;
+  padding-bottom: 8px;
+}
+
+section>em {
+  display: block;
+  margin: 8px 0;
+  text-align: center;
+}
+
+section>div {
+  padding: 10px;
+}
+
+
+#s6>div {
+  background-color: #B298DC;
+}
+
+#s7>div {
+  background-color: #BDC696;
+}
+
+
+
+/* SECTION 1 */
+/* ----------------------------------------------------- */
+
+#s1>div>p {
+  margin: 0;
+}
+
+#s1>div {
+  background-color: lightgoldenrodyellow;
+  column-count: 3;
+}
+
+@media screen AND (max-width:1100px) AND (min-width: 600px) {
+  #s1>div {
+    background-color: aqua;
+    column-count: 2;
+  }
+
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen AND (max-width:600px) {
+  #s1>div {
+    background-color: plum;
+    column-count: 1;
+  }
+
+  html{
+    font-size: 14px;
+  }
+}
+
+
+/* SECTION 2 */
+/* ----------------------------------------------------- */
+
+/*variables*/
+
+:root {
+  --parent-div:70vh;
+  --child-div: 40px;
+}
+#s2>div {
+  background-color: #CDEAC0;
+  height: var(--parent-div);
+}
+
+#s2>div :first-child{
+  height: var(--child-div);
+  background-color: #B298DC;
+}
+
+#s2>div :last-child{
+  height: calc(70vh - 80px);
+  background-color: #FF5964;
+}
+
+@media screen AND (max-width:1024px) AND (min-width: 600px) {
+  #s2>div :first-child {
+    height:auto;
+    background-color: aqua;
+  }
+
+  #s2>div :last-child {
+    background-color: yellow;
+  }
+}
+
+@media screen AND (max-width:600px) {
+  #s2>div :first-child {
+    height:auto;
+    background-color: rgba(240, 144, 221, 0.199);
+  }
+
+  #s2>div :last-child {
+    background-color: rgb(64, 158, 74);
+  }
+}
+
+
+#s2>div>div {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+
+
+
+/* SECTION 3 */
+/* ----------------------------------------------------- */
+
+#s3 > div {
+  display: flex;
+  background-color: #FF5964; 
+}
+
+#s3>div>div {
+  background-color: white;
+  margin: 10px;
+  width: 400px;     
+}
+
+@media screen AND (max-width:1024px){
+  #s3>div {
+    background-color: rgb(116, 235, 200);
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+  #s3>div>div {
+    width: 45%;
+    background-color: rgb(255, 120, 120);
+
+  }
+}
+
+
+
+@media screen AND (max-width:600px) {
+  #s3>div>div {
+    background-color: rgba(222, 18, 181, 0.63);
+    column-count: 1;
+    width: 100%;
+  }
+}
+
+
+
+/* SECTION 4 */
+/* ----------------------------------------------------- */
+
+#s4>div {
+  background-color: #B8F3FF;
+  display: flex;
+  flex-direction: row;
+  padding: 0%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+
+#s4>div>div {
+  background-color: white;
+  margin: 0px;
+  width: 30%;
+}
+
+#s4>div>div:nth-of-type(3){
+  float: right;
+}
+
+/* SECTION 5 */
+/* ----------------------------------------------------- */
+
+#s5>div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#s5>div>span {
+  background-color: #B298DC;
+  padding: 10px;
+  margin: 10px;
+}
+
+#s5>button {
+  padding: 10px;
+  background-color: #BDC696;
+  font-family: 'FT88', monospace;
+  margin: 10px;
+  display: none;
+}
+
+#box {
+  background-color: #B8F3FF;
+  padding: 10px;
+  visibility: hidden;
+  width: 120px;
+}
+
+#box>ul {
+  margin: 0;
+  padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  #s5 > div {
+    visibility: hidden;
+    display: flex;
+  }
+  #s5 > button {
+    visibility: visible;
+    display: flex;
+  }
+}
