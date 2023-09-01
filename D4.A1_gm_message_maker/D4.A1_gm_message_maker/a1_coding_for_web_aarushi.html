@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <!-- Insert relevant content inside the following meta tags-->
+    <meta name="author" content="Author Name">
+    <meta name="description" content="This is a Card Maker">
+    <meta property="og:title" content="Card Maker" />
+    <meta property="og:description" content="This is a Card Maker" />
+
+    <title>Good Morning Message Maker</title>
+
+    <!-- No need to edit this-->
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website" />
+
+    <!-- Links to boilerplate CSS and JS files -- DO NOT CHANGE or EDIT THESE!!! -->
+    <link href="./template-files/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./template-files/script.js" defer></script>
+    <script type="text/javascript" src="./template-files/html2canvas.js" defer></script>
+
+
+
+    <!-- Links to YOUR CSS and JS files -->
+    <link href="./a1_css+aarushi_coding4web.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./a1_aarushi_coding_js.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <!--DO NOT EDIT THIS -->
+        <button id="openPopup" onclick="showPopup()"> ? </button>
+
+        <!--Insert your Names after the dash -->
+        <h1>'CARD MAKER' – Aarushi Kakkar</h1>
+
+    </header>
+    <main>
+
+        <section id="input">
+            <br>
+
+            <!-- Markup for your inputs and controls go inside this section -->
+            <div class="dropdown1">
+                <label for="dropdown">Choose a background:</label>
+                <br>
+                <select onchange="selectImage()" id="dropdown">
+                    <p>Choose Image:</p>
+                    <option>Choose an Image</option>
+                    <option value="images/flower.jpg">flowers</option>
+                    <option value="images/still-life.jpeg">still-life</option>
+                    <option value="images/sunrise.jpeg">sunrise</option>
+
+                </select>
+                     
+
+            </div>
+
+            <br>
+            <br>
+            <label for="topHeader">Message on your card</label>
+            <br>
+            <input type="text" id="topHeader" oninput="showTopHeaders()">
+            <br>
+            <br>
+
+
+            <label for="bottomHeader">Who is the card from?</label>
+            <br>
+            <input type="text" id="bottomHeader" oninput="showBottomHeaders()">
+            <br>
+            <br>
+            <div class="container">
+                <label>Choose a font </label>
+                <br>
+                <input type="radio" id="font1" name="font" value="sans-serif" onchange="changeFont1()"> Sans-serif
+                <br>
+                <input type="radio" id="font2" name="font" value="serif" onchange="changeFont2()"> Serif
+                <br>
+                <input type="radio" id="font3" name="font" value="cursive" onchange="changeFont3()"> Cursive
+
+            </div>
+            <br>
+            <br>
+
+            <div class="colourr">
+                <label for="font-color">Font Color:</label>
+                <br>
+                <select id="font-color" name="font-color">
+                    <option value="black">Black</option>
+                    <option value="red">Red</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="white">White</option>
+                    <option value="cyan">Cyan</option>
+                    <option value="pink">Pink</option>
+                    <option value="purple">Purple</option>
+                    <!-- Add more color options here -->
+                </select>
+            </div>
+            <br>
+
+            <div class="FontSize">
+                <label for="font-size">Font Size:</label>
+                <br>
+                <input type="range" id="font-size" name="font-size" min="12" max="72" step="1" /><br />
+            </div>
+            <br>
+            <br>
+            
+            <label for="text-stroke">Text Stroke (pixels):</label>
+            <br>
+            <input type="number" id="stroker" name="text-stroke" min="0" max="10" onchange="adjuststroke()">
+            <br>
+            <br>
+
+
+            <label for="text-stroke-color">Choose Stroke Colour:</label>
+            <br>
+            <select id="text-stroke-color" name="text-stroke-color" onchange="updateStrokeColor()">
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </section>
+        <!-- Button to Save Image | DO NOT EDIT THIS -->
+        <button id="save-img">Save Image</button>
+
+        <section id="output">
+            <div id="output-canvas">
+                <img src="images/cardMaker.png" id="imagebox">
+                <p id="text-1"></p>
+                <p id="text-2"></p>
+
+
+
+                <!-- Markup for your image and texts go inside this div -->
+                <!-- Use the ID "text-1" for Text 1 -->
+                <!-- Use the ID "text-2" for Text 2 -->
+            </div>
+        </section>
+
+    </main>
+
+
+    <!--DO NOT EDIT THIS DIV -->
+    <div id="popupCover" onclick="hidePopup()"></div>
+
+    <!-- 
+        Once you are done with your assignment, replace the instructions text inside the div with id "popup" with the following text: This tool was programmed by [insert names], as part of a unit titled 'Coding for the Web', facilitated during the 2023/24 odd semester at Srishti Manipal Institute. 
+    -->
+    <div id="popup">
+
+        <p>
+            This tool was programmed by Aarushi Kakkar, as part of a unit titled
+            'Coding for the Web', facilitated during the 2023/24 odd semester at
+            Srishti Manipal Institute.
+
+        </p>
+        <hr>
+
+    </div>
+
+</body>
