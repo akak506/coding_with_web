@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script type="text/javascript" src="script.js" defer></script>
+        <title>D9.E1 &middot; JS eventListeners</title>
+    </head>
+
+    <body>
+        <!--- BUTTONS -->
+        <button onclick="toggleMenu1()">BUTTON 1: open and close menu 1</button>
+        
+        <button id="btn2">BUTTON 2: open and close menu 2</button>
+        
+
+        <!--- DIVS (#menus)-->
+
+        <div id="menu1" class="closed">
+            &nbsp; #menu1. Opened via HTML onclick attribute on button 1.
+        </div>
+        
+        <div id="menu2" class="closed">
+            &nbsp; #menu2. Opened onload with the 'load' eventlistener added to the body. Can also be opened/closed with the 'click' event listener added to button 2
+        </div>
+        
+    </body>
+
+</html>
