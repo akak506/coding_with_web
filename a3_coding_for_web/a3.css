@@ -1,0 +1,687 @@
+/* Reset some default styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'futurabook';
+    src: url('webfontkit-20230907-150920/futura_book-webfont.woff2') format('woff2'),
+        url('webfontkit-20230907-150920/futura_book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('Lora_font_add/Lora-Regular.woff2') format('woff2'),
+        url('Lora_font_add/Lora-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+h3 {
+    font-family: 'Lora';
+}
+ /* The container for animation */
+.animation {
+    display: flex;
+    font-family: 'futurabook';
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #6d1515;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically on small screens */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+ /* The word tht stays the same */
+.wrapper .static-txt {
+    color: #ffffff;
+    font-size: 10vw;
+    font-weight: 400;
+}
+ /* the words with the typing text */
+
+.wrapper .dynamic-txts {
+    margin-left: 15px;
+    overflow: hidden;
+}
+
+
+
+
+.dynamic-txts li {
+    list-style: none;
+    color: #efa6a4;
+    font-size: 4vw;
+    font-weight: 500;
+    animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+ /* Span to create the typing effect where the span is the same colour as the bg , as it moves we can see the text below it*/
+.dynamic-txts li span {
+    position: relative;
+    margin: 5px 0;
+    line-height: normal;
+}
+
+.dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #6d1515;
+    border-left: 2px solid #efa6a4;
+    animation: typing 3s steps(10) infinite;
+}
+
+@keyframes typing {
+
+    40%,
+    60% {
+        left: calc(100% + 30px);
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: row;
+        /* Display elements in a row for larger screens */
+    }
+
+    .wrapper .dynamic-txts {
+        margin-top: 0;
+        /* Remove the top margin to align dynamic text with static text */
+        margin-left: 15px;
+        /* Add left margin for spacing between static and dynamic text */
+    }
+
+    .dynamic-txts li {
+        font-size: 4vw;
+        /* Responsive font size based on viewport width */
+    }
+
+    /* Reset animation for small screens */
+    .dynamic-txts li {
+        animation: none;
+    }
+}
+
+/* Style for the navigation bar */
+.navbar {
+    background-color: #833f3e;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: 'futurabook';
+}
+
+/* Container to center content and create padding */
+.container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Style for the logo */
+.logo {
+    font-size: 24px;
+    font-family: "Lora";
+}
+
+/* Style for the navigation links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Style for the mobile menu icon */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    /* Hide by default on larger screens */
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        /* Show on smaller screens */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        /* Stack links vertically on smaller screens */
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 10px 0;
+        display: none;
+        /* Hide by default on smaller screens */
+    }
+
+    .nav-links.active {
+        display: flex;
+        /* Show when the menu is active */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+.hero-sec {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Vertically center content */
+}
+
+.text {
+    flex: 1;
+    /* Grow to fill available space */
+    padding: 20px;
+    /* Add spacing around text */
+
+}
+
+.text h1 {
+    font-size: 92px;
+    margin-left: 10%;
+    font-family: 'Lora';
+}
+
+.text h3 {
+    font-size: 52px;
+    font-family: 'futurabook';
+    font-weight: lighter;
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+@media screen and (max-width: 600px) {
+    .text h1 {
+        font-size: 50px;
+    }
+
+    .text h3 {
+        font-size: 32px;
+    }
+}
+
+.img {
+    flex: 1;
+    /* Grow to fill available space */
+    text-align: center;
+    /* Center the image horizontally */
+    object-fit: cover;
+}
+
+.img img {
+    margin-top: 5%;
+
+    border: 10px solid #833f3e;
+    border-radius: 100px;
+
+}
+
+
+.empty {
+    height: 5vh;
+}
+
+
+.vid {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #6d1515;
+    /* Align items to the top */
+    height: 100vh;
+}
+
+.vid-con {
+    /* Styles for vid-con */
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    /* Adjust this as needed */
+}
+
+
+.content {
+    /* Styles for content */
+    width: 50%;
+    /* Adjust this as needed */
+    padding-left: 20px;
+    /* Optional: Add spacing between the two divs */
+    color: #fff
+}
+
+.content h3 {
+    font-size: 2.5rem;
+    margin-top: -1rem;
+    font-weight: 800;
+    font-family: 'Lora';
+
+
+}
+
+.content h5 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-right: 3.5rem;
+    color: #d5b5b4;
+    font-style: italic;
+    font-family: "Lora";
+}
+
+.content h5:last-child {
+    font-size: 1.35rem;
+    font-weight: lighter;
+    color: #ffffff;
+    font-family: 'futurabook';
+    font-style: normal;
+}
+
+
+@media screen and (max-width: 850px) {
+    .vid-con {
+        width: 100%;
+        height: auto;
+    }
+
+    .vid {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .content {
+        width: 100%;
+        padding: 20px;
+
+    }
+}
+
+@media screen and (min-width: 851px) and (max-width: 1020px) {
+    .content {
+        font-size: 1.8rem;
+        /* Reduce text font size proportionally */
+    }
+
+    .vid-con iframe {
+        width: 80%;
+        /* Reduce iframe width */
+    }
+}
+
+
+
+.symptoms {
+    display: grid;
+    place-items: center;
+    height: 70vh;
+    text-align: center;
+}
+
+.symptoms h3 {
+    font-size: 52px;
+    font-family: 'Lora';
+    color: #430e0e;
+}
+
+@media screen and (max-width: 768px) {
+    .symptoms h3 {
+        font-size: 40px;
+    }
+}
+
+
+.results {
+    display: flex;
+    width: calc(80% - 2rem);
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.result {
+    padding: 0;
+}
+
+.Symptom_img {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease;
+}
+
+
+
+.card-head {
+    background-color: #6d1515;
+    text-align: center;
+    padding-top: 10px;
+    width: 100%;
+
+}
+
+.card-head h3 {
+    color: #e0e0e0;
+    font-size: 52px;
+    font-family: 'Lora';
+    margin-top: 10px;
+
+}
+
+@media screen and (max-width: 768px) {
+    .card-head h3 {
+        font-size: 40px;
+    }
+}
+
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow cards to wrap to the next row */
+    justify-content: space-between;
+    margin: 0-10px;
+    height: 107vh;
+    overflow-x: hidden;
+    background-color: #6d1515;
+}
+
+.card {
+    width: calc(33.33% - 100px);
+    /* Adjust the width to create three cards per row */
+    margin: 40px;
+    perspective: 1000px;
+    margin-right: 10px;
+
+}
+
+.card:nth-of-type(1),
+.card:nth-of-type(4) {
+    margin-left: 5%;
+}
+
+.card:nth-of-type(4),
+.card:nth-of-type(5),
+.card:nth-of-type(6) {
+    margin-top: -20px;
+}
+
+.card:nth-of-type(3),
+.card:nth-of-type(6) {
+    margin-right: 5%;
+}
+
+.card-inner {
+    width: 100%;
+    height: 350px;
+    /* Set the height of the card */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    /* Add a transition for smooth flipping */
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+    /* Rotate the card on hover */
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    /* Hide the backface when flipped */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.card-front {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.card-back {
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    font-family: "futurabook";
+    /* Initially, show the back side */
+}
+
+.card-image {
+    width: 100%;
+    max-height: 100%;
+    /* Adjust the height of the image */
+    /* Add margin between image and subtitle */
+}
+
+.card-title {
+    font-size: 24px;
+    /* Increase the font size for the title */
+    margin-top: 10px;
+    /* Add margin to separate image and title */
+}
+
+.card-subtitle {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 80px);
+        /* Change to 50% width for two cards per row */
+    }
+}
+
+/* Media query for the second breakpoint where cards stack on top of each other */
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+        /* Full width for single card per row */
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .card-inner {
+        transform: none;
+        margin-top: 20px;
+        /* Add margin to separate stacked cards */
+    }
+}
+
+.card-container {
+    display: flex;
+}
+
+.card1 {
+    flex-basis: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image1 {
+    flex: 1;
+    overflow: hidden;
+}
+
+.card-image1 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-content1 {
+    padding: 10px 0;
+}
+
+.card1 h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.card1 p {
+    font-size: 16px;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: 300px;
+    /* Should be removed. Only for demonstration */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column img {
+    width: 15rem;
+    height: 17rem;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the four columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1024px) {
+    .column {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.symptom_head {
+    background-color: #ffffff;
+    text-align: center;
+    padding-top: 10px;
+    width: 100%;
+
+}
+
+.symptom_head h3 {
+    color: #430e0e;
+    font-size: 52px;
+    font-family: 'Lora';
+    margin-top: 10px;
+
+}
+
+.track {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    
+}
+
+.button {
+    -webkit-border-radius: 12;
+    -moz-border-radius: 12;
+    border-radius: 12px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    background: #6d1515;
+    padding: 16px 26px 16px 26px;
+    text-decoration: none;
+  }
+  
+  .button:hover {
+    background: #f0aaaa;
+    text-decoration: none;
+  }
+
+  .footer{
+    
+    color: #6d1515;
+    font-size: 32px;
+    background-color: #f0aaaa;
+  }
