@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create four equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .column img{
+    width: 90%;
+    height: 90%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the four columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 1024px) {
+    .column {
+      width: 50%;
+    }
+  }
+ 
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
